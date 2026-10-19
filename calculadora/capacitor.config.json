@@ -1,0 +1,8 @@
+{
+  "appId": "com.kwteenz.calculadora",
+  "appName": "Calculadora",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false
+  }
+}

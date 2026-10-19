@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#1b1613">
+  <title>Calculadora do Herói</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calc" aria-label="Calculadora do Herói">
+
+    <header class="hero">
+      <div class="hero-top">
+        <span class="title">⚔ CALCULADORA ⚔</span>
+      </div>
+      <div class="hero-stats">
+        <span id="lvl" class="lvl">NV 1</span>
+        <span id="rank" class="rank">Camponês</span>
+      </div>
+      <div class="xpbar" role="progressbar" aria-label="Experiência" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div id="xpfill" class="xpfill"></div>
+        <span id="xptext" class="xptext">0/100 XP</span>
+      </div>
+    </header>
+
+    <section id="display" class="display" aria-live="polite">
+      <div id="expr" class="expr"></div>
+      <div id="result" class="result">0</div>
+      <div id="toast" class="toast" role="status"></div>
+    </section>
+
+    <details class="log">
+      <summary>📜 Diário de missões</summary>
+      <ul id="log"><li class="empty">Nenhuma missão cumprida ainda.</li></ul>
+    </details>
+
+    <section class="keys">
+      <button data-action="clear" class="fn danger">AC</button>
+      <button data-action="sign" class="fn">±</button>
+      <button data-action="percent" class="fn">%</button>
+      <button data-action="op" data-op="÷" class="op">÷</button>
+
+      <button data-action="digit" data-digit="7">7</button>
+      <button data-action="digit" data-digit="8">8</button>
+      <button data-action="digit" data-digit="9">9</button>
+      <button data-action="op" data-op="×" class="op">×</button>
+
+      <button data-action="digit" data-digit="4">4</button>
+      <button data-action="digit" data-digit="5">5</button>
+      <button data-action="digit" data-digit="6">6</button>
+      <button data-action="op" data-op="−" class="op">−</button>
+
+      <button data-action="digit" data-digit="1">1</button>
+      <button data-action="digit" data-digit="2">2</button>
+      <button data-action="digit" data-digit="3">3</button>
+      <button data-action="op" data-op="+" class="op">+</button>
+
+      <button data-action="backspace" class="fn" aria-label="Apagar">⌫</button>
+      <button data-action="digit" data-digit="0">0</button>
+      <button data-action="decimal" aria-label="Vírgula">,</button>
+      <button data-action="equals" class="eq" aria-label="Igual">=</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
